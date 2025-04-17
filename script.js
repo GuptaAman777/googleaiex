@@ -7,7 +7,7 @@ const sendButton = document.getElementById('send-button');
 // Storing your API key in client-side code is highly insecure and not recommended
 // for production applications. Anyone can view your key.
 // You are using this AT YOUR OWN RISK.
-const API_KEY = 'AIzaSyDy3aH6I8ZO40JeCleZ2_4IdPvsbbHaXkw';
+const API_KEY = 'AIzaSyCdcluTSk8YFgFMleTR1smF7LcFvsnkX1M';
 // -----------------------------------------------------------------------------
 
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${API_KEY}`;

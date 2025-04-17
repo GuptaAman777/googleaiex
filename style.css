@@ -1,0 +1,186 @@
+:root {
+    --primary-color: #1a73e8; /* Google Blue */
+    --background-color: #f8f9fa; /* Light Gray */
+    --chatbox-bg: #ffffff; /* White */
+    --user-message-bg: #e1f5fe; /* Light Blue */
+    --ai-message-bg: #f1f3f4; /* Google Gray */
+    --text-color: #202124; /* Dark Gray */
+    --secondary-text-color: #5f6368; /* Medium Gray */
+    --border-color: #dadce0; /* Light Border Gray */
+    --button-hover-bg: #1765cc;
+    --font-family: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--text-color);
+}
+
+.chat-container {
+    width: 100%;
+    max-width: 600px;
+    height: 80vh;
+    max-height: 700px;
+    background-color: var(--chatbox-bg);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(60,64,67,0.3), 0 4px 8px rgba(60,64,67,0.15);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 16px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.chat-header h1 {
+    font-size: 1.4em;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.chat-header p {
+    font-size: 0.8em;
+    opacity: 0.9;
+}
+
+.chat-box {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: var(--background-color); /* Slightly different bg for contrast */
+}
+
+.message {
+    padding: 10px 15px;
+    border-radius: 18px;
+    max-width: 80%;
+    word-wrap: break-word;
+    line-height: 1.4;
+}
+
+.message .sender {
+    font-weight: 500;
+    font-size: 0.85em;
+    display: block;
+    margin-bottom: 4px;
+    color: var(--secondary-text-color);
+}
+
+.user-message {
+    background-color: var(--user-message-bg);
+    align-self: flex-end;
+    border-bottom-right-radius: 4px; /* Slightly different shape */
+}
+
+.ai-message {
+    background-color: var(--ai-message-bg);
+    align-self: flex-start;
+    border-bottom-left-radius: 4px; /* Slightly different shape */
+}
+
+.ai-message p, .user-message p {
+    margin: 0; /* Remove default paragraph margin */
+}
+
+.loading-message {
+    color: var(--secondary-text-color);
+    font-style: italic;
+    align-self: flex-start;
+}
+
+
+.input-area {
+    display: flex;
+    padding: 15px 20px;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--chatbox-bg);
+    flex-shrink: 0;
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    font-size: 1em;
+    margin-right: 10px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+#user-input:focus {
+    border-color: var(--primary-color);
+}
+
+#send-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    flex-shrink: 0; /* Prevent button from shrinking */
+}
+
+#send-button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+#send-button .material-icons {
+    font-size: 24px;
+}
+
+.api-key-warning {
+    background-color: #fff3e0; /* Light Orange */
+    color: #e65100; /* Dark Orange */
+    padding: 8px 20px;
+    text-align: center;
+    font-size: 0.8em;
+    border-top: 1px solid #ffe0b2; /* Lighter Orange Border */
+    flex-shrink: 0;
+}
+
+/* Scrollbar styling (optional, for a more modern look) */
+.chat-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-box::-webkit-scrollbar-track {
+    background: var(--background-color);
+    border-radius: 4px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 4px;
+    border: 2px solid var(--background-color); /* Creates padding around thumb */
+}
+
+.chat-box::-webkit-scrollbar-thumb:hover {
+    background-color: var(--secondary-text-color);
+}
